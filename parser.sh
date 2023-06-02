@@ -1,45 +1,64 @@
 #!/bin/bash
 
+# The fields to look for in our output
+FIELDS=("Interface" "PortID" "SysName" "TTL")
+
 PIPED_INPUT=""
 
+# read all the lines of piped input
 while IFS= read line; do
-    # echo "Line: ${line}"
     PIPED_INPUT+=$line$'\n'
 done
 
-# echo "$PIPED_INPUT"
 
-KEY_LINES=$( echo "$PIPED_INPUT" | grep -E 'Interface|PortID|SysName|------')
+FIELDS_REGEX=""
+for FIELD_NAME in ${FIELDS[@]}; do
+    FIELDS_REGEX+="$FIELD_NAME|"
+done
+
+KEY_LINES=$( echo "$PIPED_INPUT" | grep -E "$FIELDS_REGEX------")
 # trim whitespaces
 KEY_LINES=$( echo "$KEY_LINES" | sed -e 's/^[ \t]*//')
-# echo "$KEY_LINES"
-
-# echo "$KEY_LINES" | grep -E '(--)+' 
-echo "$KEY_LINES" | uniq
 
 # an a
 FLEX_LINES=()
 
-
-NODE_DATA=""
 IFS=$'\n'
-for var in $KEY_LINES
+for LINE in $KEY_LINES
 do
 #   FLEX_LINES+=$var
-    if [ "$var" = "-------------------------------------------------------------------------------" ]; then
-        FLEX_LINES+=($NODE_DATA)
+    if [ "$LINE" == "-------------------------------------------------------------------------------" ]; then
+        LINE_VALUES=""
+        for FIELD_NAME in ${FIELDS[@]}; do
+            LINE_VALUES+=${!FIELD_NAME}"||"
+        done
+        FLEX_LINES+=($LINE_VALUES)
         # NODE_DATA=()
+        # reset all variables
+        for FIELD_NAME in ${FIELDS[@]}; do
+            eval "$FIELD_NAME=\"\""
+        done
     else
-        echo "Is this a node we want to have $var"
-        # $var = (sed -e '^')
-        # NODE_DATA+=("$var||")
-        NODE_DATA+="$var||"
-        echo "${#NODE_DATA[@]}"
+        for FIELD_NAME in ${FIELDS[@]}; do
+            VALID_FIELD=$(echo "$LINE" | grep -E "^\s*$FIELD_NAME:")
+            if [ ! -z "$VALID_FIELD" -a "$VALID_FIELD" ]; then
+                LINE_VALUE=$(echo "$LINE" | sed -E "s/^[ ]*$FIELD_NAME:[ ]+(.*)/\1/")
+                eval "$FIELD_NAME=\"$LINE_VALUE\""
+             fi
+        done
     fi
 done
 
 echo "*********"
 
+# Print out the header fields
+HEADERS=$(printf "||%s" "${FIELDS[@]}")
+echo ${HEADERS:2}
+
+# Print out the body for flex parsing
 for node in ${FLEX_LINES[@]}; do
-    echo "$node"
+    # output the values trimming the last divider characters
+    if [ ]; then
+        echo "${node%??}"
+    fi
 done

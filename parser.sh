@@ -49,7 +49,9 @@ do
     fi
 done
 
-echo "*********"
+######
+# OUTPUT THE FORMATTED DATA
+#####
 
 # Print out the header fields
 HEADERS=$(printf "||%s" "${FIELDS[@]}")
@@ -58,7 +60,10 @@ echo ${HEADERS:2}
 # Print out the body for flex parsing
 for node in ${FLEX_LINES[@]}; do
     # output the values trimming the last divider characters
-    if [ ]; then
+    if echo "$node" | grep -qE "^[|]"; then
+        # do nothing
+        N=1
+    else
         echo "${node%??}"
     fi
 done

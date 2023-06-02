@@ -5,7 +5,9 @@ integrations:
     config:
         name: LLDP
           commands:
-            - run: 'cat /lldpdata/lldpctl-show-neighbors.txt | /lldpdata/parser.sh'
+            - run: 'cat /lldpdata/sample-parsed.txt'
               split: horizontal
-              split_by: ||
+              regex_match: true
+              split_by: ^([^|]*)[|]{2,}([^|]*)[|]{2,}([^|]*)[|]{2,}([^|]*)
               row_start: 1
+              set_header: [Interface, PortId, SysName, TTL]

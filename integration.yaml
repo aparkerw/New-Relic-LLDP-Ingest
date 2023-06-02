@@ -1,0 +1,11 @@
+
+
+integrations:
+  - name: nri-flex
+    config:
+        name: LLDP
+          commands:
+            - run: 'cat /lldpdata/lldpctl-show-neighbors.txt | /lldpdata/parser.sh'
+              split: horizontal
+              split_by: ||
+              row_start: 1

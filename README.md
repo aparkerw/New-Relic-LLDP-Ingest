@@ -1,3 +1,6 @@
+# LLDP Integration with New Relic
+
+The purpose of this repository is to provide an aproach to incorporating LLDP data alongside your other telemetry data using the `nri-flex` script.
 
 ## Usage
 

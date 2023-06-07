@@ -34,7 +34,7 @@ Interface:    vnet0, via: LLDP, RID: 3, Time: 0 day, 00:00:20
     ChassisID:    mac ac:ac:ac:59:ef:ac
     SysName:      prod-svr-1
     SysDescr:     Ubuntu 22.33.4 LTS Linux 9.9.0-99-generic #152-Ubuntu SMP Wed Nov 01 10:10:10 UTC 2099 x86_64
-    MgmtIP:       10.114.12.102
+    MgmtIP:       10.10.11.13
     MgmtIP:       fe80::5054:ff:fe59:ef5f
     Capability:   Bridge, on
     Capability:   Router, on
@@ -50,7 +50,7 @@ Interface:    vnet2, via: LLDP, RID: 4, Time: 0 day, 00:00:19
     ChassisID:    mac ac:ac:ac:e1:b8:ac
     SysName:      prod-svr-2
     SysDescr:     Ubuntu 22.33.4 LTS Linux 9.9.0-99-generic #152-Ubuntu SMP Wed Nov 01 10:10:10 UTC 2099 x86_64
-    MgmtIP:       10.114.12.122
+    MgmtIP:       10.10.11.12
     MgmtIP:       fe80::5054:ff:fee1:b80c
     Capability:   Bridge, on
     Capability:   Router, on
@@ -66,7 +66,7 @@ Interface:    vnet3, via: LLDP, RID: 5, Time: 0 day, 00:00:19
     ChassisID:    mac ac:ac:ac:25:a2:ac
     SysName:      prod-svr-3
     SysDescr:     Ubuntu 22.33.4 LTS Linux 9.9.0-99-generic #152-Ubuntu SMP Wed Nov 01 10:10:10 UTC 2099 x86_64
-    MgmtIP:       10.114.12.123
+    MgmtIP:       10.10.11.13
     MgmtIP:       fe80::5054:ff:fe25:a220
     Capability:   Bridge, on
     Capability:   Router, on

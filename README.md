@@ -4,6 +4,12 @@ The purpose of this repository is to provide an aproach to incorporating LLDP da
 
 ## Usage
 
+The host with LLDP data will need two components to be installed: 
+- the LLDP parser located in this file 
+- the `nri-flex` binaries
+
+### Obtaining the LLDP Parser
+
 The `parse.sh` script is there to accept piped input and to parse out the needed information for FLEX to use.
 
 Don't forget to add execution priveldges to the `parse.sh` file with `chmod +x parse.sh`

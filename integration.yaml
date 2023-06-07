@@ -5,7 +5,7 @@ integrations:
     config:
         name: LLDP
           commands:
-            - run: 'cat /lldpdata/sample-parsed.txt'
+            - run: 'lldpcli show neighbors | /etc/newrelic-infra/lldp/parser.sh'
               split: horizontal
               regex_match: true
               split_by: ^([^|]*)[|]{2,}([^|]*)[|]{2,}([^|]*)[|]{2,}([^|]*)

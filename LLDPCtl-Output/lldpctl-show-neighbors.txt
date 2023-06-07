@@ -1,0 +1,79 @@
+-------------------------------------------------------------------------------
+LLDP neighbors:
+-------------------------------------------------------------------------------
+Interface:    eth0, via: LLDP, RID: 1, Time: 0 day, 00:00:39
+  Chassis:
+    ChassisID:    mac ac:ac:ac:9d:0f:ac
+    SysName:      tmp-srv-1
+    SysDescr:     Juniper Networks, Inc. q**c Ethernet Switch, kernel JUNOS 12.34-56.7, Build date: 2123-11-22 00:00:01 UTC Copyright (c) 1996-2020 Juniper Networks, Inc.
+    Capability:   Bridge, on
+    Capability:   Router, on
+  Port:
+    PortID:       ifname et-0/0/2
+    PortDescr:    et-0/0/2
+    TTL:          120
+  Unknown TLVs:
+    TLV:          OUI: 00,90,69, SubType: 1, Len: 12 58,48,33,31,32,30,34,38,30,34,32,37
+-------------------------------------------------------------------------------
+Interface:    eth1, via: LLDP, RID: 2, Time: 0 day, 00:00:25
+  Chassis:
+    ChassisID:    mac ac:ac:ac:9d:0a:ac
+    SysName:      tmp-srv-2
+    SysDescr:     Juniper Networks, Inc. q**c Ethernet Switch, kernel JUNOS 12.34-56.7, Build date: 2123-11-22 00:00:01 UTC Copyright (c) 1996-2020 Juniper Networks, Inc.
+    Capability:   Bridge, on
+    Capability:   Router, on
+  Port:
+    PortID:       ifname et-0/0/2
+    PortDescr:    et-0/0/2
+    TTL:          120
+  Unknown TLVs:
+    TLV:          OUI: 00,90,69, SubType: 1, Len: 12 58,48,33,31,32,30,34,38,30,34,34,33
+-------------------------------------------------------------------------------
+Interface:    vnet0, via: LLDP, RID: 3, Time: 0 day, 00:00:20
+  Chassis:
+    ChassisID:    mac ac:ac:ac:59:ef:ac
+    SysName:      prod-svr-1
+    SysDescr:     Ubuntu 22.33.4 LTS Linux 9.9.0-99-generic #152-Ubuntu SMP Wed Nov 01 10:10:10 UTC 2099 x86_64
+    MgmtIP:       10.114.12.102
+    MgmtIP:       fe80::5054:ff:fe59:ef5f
+    Capability:   Bridge, on
+    Capability:   Router, on
+    Capability:   Wlan, off
+    Capability:   Station, off
+  Port:
+    PortID:       mac ac:ac:ac:59:ef:ac
+    PortDescr:    ens4
+    TTL:          120
+-------------------------------------------------------------------------------
+Interface:    vnet2, via: LLDP, RID: 4, Time: 0 day, 00:00:19
+  Chassis:
+    ChassisID:    mac ac:ac:ac:e1:b8:ac
+    SysName:      prod-svr-2
+    SysDescr:     Ubuntu 22.33.4 LTS Linux 9.9.0-99-generic #152-Ubuntu SMP Wed Nov 01 10:10:10 UTC 2099 x86_64
+    MgmtIP:       10.114.12.122
+    MgmtIP:       fe80::5054:ff:fee1:b80c
+    Capability:   Bridge, on
+    Capability:   Router, on
+    Capability:   Wlan, off
+    Capability:   Station, off
+  Port:
+    PortID:       mac ac:ac:ac:e1:b8:ac
+    PortDescr:    ens4
+    TTL:          120
+-------------------------------------------------------------------------------
+Interface:    vnet3, via: LLDP, RID: 5, Time: 0 day, 00:00:19
+  Chassis:
+    ChassisID:    mac ac:ac:ac:25:a2:ac
+    SysName:      prod-svr-3
+    SysDescr:     Ubuntu 22.33.4 LTS Linux 9.9.0-99-generic #152-Ubuntu SMP Wed Nov 01 10:10:10 UTC 2099 x86_64
+    MgmtIP:       10.114.12.123
+    MgmtIP:       fe80::5054:ff:fe25:a220
+    Capability:   Bridge, on
+    Capability:   Router, on
+    Capability:   Wlan, off
+    Capability:   Station, off
+  Port:
+    PortID:       mac ac:ac:ac:25:a2:ac
+    PortDescr:    ens4
+    TTL:          120
+-------------------------------------------------------------------------------
